@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Laravel FrameWork Theory</title>
+    <title>{{ $title }}</title>
 
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
@@ -48,7 +48,7 @@
 @section('header')
     <div class="jumbotron">
         <div class="container">
-            <h1><?php echo $title;?></h1>
+            <h1>{{ $title }}</h1>
             <p>This is a template for a simple marketing or informational website. It includes a large callout called a jumbotron and three supporting pieces of content. Use it as a starting point to create something more unique.</p>
             <p>
                 <a class="btn btn-primary btn-lg" href="#" role="button">Learn more &raquo;</a>
