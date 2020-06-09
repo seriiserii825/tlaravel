@@ -10,6 +10,6 @@ use App\Http\Controllers\Controller;
 class IndexController extends Controller
 {
     public function show(){
-    	return view('default.template', ['title' => 'Hello world']);
+    	return view('default.index', ['title' => 'Hello world']);
     }
 }

@@ -9,7 +9,7 @@ use App\Http\Controllers\Controller;
 
 class AboutController extends Controller
 {
-	public function show(){
-		echo 'About';
+	public function show() {
+		return view( 'default.about', [ 'title' => 'Hello world' ] );
 	}
 }
