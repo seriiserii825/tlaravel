@@ -10,6 +10,7 @@
 |
 */
 Route::get( '/', [ 'uses' => 'Admin\IndexController@show', 'as' => 'home' ] );
-Route::get( '/article/{id}', [ 'uses' => 'Admin\Core@getArticle' , 'as' => 'articles' ] );
-Route::get( '/articles', [ 'uses' => 'Admin\Core@getArticles', 'as' => 'article'] );
+Route::get( '/about', [ 'uses' => 'Admin\AboutController@show', 'as' => 'about' ] );
+Route::get( '/article/{id}', [ 'uses' => 'Admin\Core@getArticle' , 'as' => 'article' ] );
+Route::get( '/articles', [ 'uses' => 'Admin\Core@getArticles', 'as' => 'articles'] );
 

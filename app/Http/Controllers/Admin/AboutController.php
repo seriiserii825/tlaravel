@@ -7,9 +7,9 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
-class IndexController extends Controller
+class AboutController extends Controller
 {
-    public function show(){
-    	return view('default.template', ['title' => 'Hello world']);
-    }
+	public function show(){
+		echo 'About';
+	}
 }
