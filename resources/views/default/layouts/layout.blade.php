@@ -5,7 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <title>{{ $title }}</title>
-
+    <style>
+        .page {
+          padding: 200px 0;
+        }
+    </style>
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
           integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
@@ -36,6 +40,9 @@
                     <li>
                         <a href="<?php echo route( 'article', array( 'id' => 10 ) ); ?>">Article</a>
                     </li>
+                    <li>
+                        <a href="<?php echo route( 'contacts' ); ?>">Contacts</a>
+                    </li>
                 </ul>
             </div><!--/.navbar-collapse -->
         </div>
@@ -57,64 +64,66 @@
     </div>
 @show
 
-<div class="container">
-    <!-- Example row of columns -->
-    <div class="row">
+<div class="page">
+    <div class="container">
+        <!-- Example row of columns -->
+        <div class="row">
 
-        <div class="col-md-3">
-            @section('sidebar')
-                <div class="sidebar-module">
-                    <h2>Archives</h2>
-                    <ol class="list-unstyled">
-                        <li>
-                            <a href="#">March 2014</a>
-                        </li>
-                        <li>
-                            <a href="#">February 2014</a>
-                        </li>
-                        <li>
-                            <a href="#">January 2014</a>
-                        </li>
-                        <li>
-                            <a href="#">December 2013</a>
-                        </li>
-                        <li>
-                            <a href="#">November 2013</a>
-                        </li>
-                        <li>
-                            <a href="#">October 2013</a>
-                        </li>
-                        <li>
-                            <a href="#">September 2013</a>
-                        </li>
-                        <li>
-                            <a href="#">August 2013</a>
-                        </li>
-                        <li>
-                            <a href="#">July 2013</a>
-                        </li>
-                        <li>
-                            <a href="#">June 2013</a>
-                        </li>
-                        <li>
-                            <a href="#">May 2013</a>
-                        </li>
-                        <li>
-                            <a href="#">April 2013</a>
-                        </li>
-                    </ol>
-                </div>
-            @show
+            <div class="col-md-3">
+                @section('sidebar')
+                    <div class="sidebar-module">
+                        <h2>Archives</h2>
+                        <ol class="list-unstyled">
+                            <li>
+                                <a href="#">March 2014</a>
+                            </li>
+                            <li>
+                                <a href="#">February 2014</a>
+                            </li>
+                            <li>
+                                <a href="#">January 2014</a>
+                            </li>
+                            <li>
+                                <a href="#">December 2013</a>
+                            </li>
+                            <li>
+                                <a href="#">November 2013</a>
+                            </li>
+                            <li>
+                                <a href="#">October 2013</a>
+                            </li>
+                            <li>
+                                <a href="#">September 2013</a>
+                            </li>
+                            <li>
+                                <a href="#">August 2013</a>
+                            </li>
+                            <li>
+                                <a href="#">July 2013</a>
+                            </li>
+                            <li>
+                                <a href="#">June 2013</a>
+                            </li>
+                            <li>
+                                <a href="#">May 2013</a>
+                            </li>
+                            <li>
+                                <a href="#">April 2013</a>
+                            </li>
+                        </ol>
+                    </div>
+                @show
+            </div>
+
+            @yield('content')
         </div>
 
-       @yield('content')
+        <hr>
+
+        <footer>
+            <p>&copy; 2015 Company, Inc.</p>
+        </footer>
     </div>
-
-    <hr>
-
-    <footer>
-        <p>&copy; 2015 Company, Inc.</p>
-    </footer>
 </div>
 </body>
 </html>
