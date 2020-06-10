@@ -5,59 +5,27 @@
 @endsection
 
 @section('header')
-{{--    @parent--}}
+    @parent
 @endsection
 
 @section('sidebar')
-{{--    @parent--}}
+    @parent
 @endsection
 
 
 @section('content')
     <h2>Contact form</h2>
-    <form>
-        <div class="form-row">
-            <div class="form-group col-md-6">
-                <label for="inputEmail4">Email</label>
-                <input type="email" class="form-control" id="inputEmail4" placeholder="Email">
-            </div>
-            <div class="form-group col-md-6">
-                <label for="inputPassword4">Password</label>
-                <input type="password" class="form-control" id="inputPassword4" placeholder="Password">
-            </div>
+    {{ print_r(Session::all()) }}
+    <form method="post" action="{{ route('contacts') }}">
+        {{ csrf_field() }}
+
+        <div class="form-group">
+            <label for="inputEmail4">Name</label>
+            <input name="text" type="text" class="form-control" value="{{ old('text') }}" id="inputEmail4" placeholder="Name">
         </div>
         <div class="form-group">
             <label for="inputAddress">Address</label>
-            <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
-        </div>
-        <div class="form-group">
-            <label for="inputAddress2">Address 2</label>
-            <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
-        </div>
-        <div class="form-row">
-            <div class="form-group col-md-6">
-                <label for="inputCity">City</label>
-                <input type="text" class="form-control" id="inputCity">
-            </div>
-            <div class="form-group col-md-4">
-                <label for="inputState">State</label>
-                <select id="inputState" class="form-control">
-                    <option selected>Choose...</option>
-                    <option>...</option>
-                </select>
-            </div>
-            <div class="form-group col-md-2">
-                <label for="inputZip">Zip</label>
-                <input type="text" class="form-control" id="inputZip">
-            </div>
-        </div>
-        <div class="form-group">
-            <div class="form-check">
-                <label class="form-check-label">
-                    <input class="form-check-input" type="checkbox">
-                    Check me out
-                </label>
-            </div>
+            <input name="address" type="text" class="form-control" value="{{ old('address') }}" id="inputAddress" placeholder="1234 Main St">
         </div>
         <button type="submit" class="btn btn-primary">Sign in</button>
     </form>

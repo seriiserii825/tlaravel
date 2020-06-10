@@ -6,9 +6,9 @@
 
     <title>{{ $title }}</title>
     <style>
-        .page {
-          padding: 200px 0;
-        }
+			.page {
+				padding: 200px 0;
+			}
     </style>
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
@@ -115,7 +115,9 @@
                 @show
             </div>
 
-            @yield('content')
+            <div class="col-md-9">
+                @yield('content')
+            </div>
         </div>
 
         <hr>
