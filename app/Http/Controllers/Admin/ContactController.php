@@ -15,7 +15,6 @@ class ContactController extends Controller {
 
 	public function show() {
 		$this->request->flash();
-
 		return view( 'default.contacts', [ 'title' => 'Contacts' ] );
 	}
 }
