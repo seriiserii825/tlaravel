@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
 use DB;
-
+use App\Article;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
@@ -20,10 +20,15 @@ class Core extends Controller
 		// $articles = DB::table('articles')->max('id');
 		// $articles = DB::table('articles')->select('id', 'name', 'text')->get();
 		// $articles = DB::table('articles')->distinct()->select('id', 'name', 'text')->get();
-		$articles = DB::table('articles')->distinct()->select('id', 'name', 'text')->where('id', '=', 2)->get();
+		$article = new Article();
+		$article->name = 'Article title';
+		$article->text = 'Article text';
+//		$article->save();
 
-		echo '<pre>';
-		var_dump($articles);
-		echo '</pre>';
+		$articles = Article::all();
+		foreach ($articles as $article) {
+			echo $article->name.'<br>';
+		}
+
 	}
 }
