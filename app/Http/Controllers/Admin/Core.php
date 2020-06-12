@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Country;
 use App\User;
 use Illuminate\Http\Request;
 use DB;
@@ -15,9 +16,13 @@ class Core extends Controller
 
 	}
 	public function getArticles() {
-		$user = User::find(1);
+//		$user = User::find(1);
+//		$country = $user->country;
 
-		dump($user);
+		$country = Country::find(1);
+
+//		vardump($country);
+
 
 		// $articles = DB::table('articles')->get();
 		// $articles = DB::table('articles')->first();
