@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateTablePages extends Migration
+class CreateTablesPages extends Migration
 {
     /**
      * Run the migrations.
@@ -14,9 +14,9 @@ class CreateTablePages extends Migration
     {
         Schema::create('pages', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('page_about_title', 100);
-            $table->text('page_about_text');
-            $table->timestamps();
+            $table->string('name', 100);
+	        $table->text( 'text');
+	        $table->timestamps();
         });
     }
 
