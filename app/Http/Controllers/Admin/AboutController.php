@@ -13,14 +13,10 @@ class AboutController extends Controller
 	public function show() {
 		$articles = DB::select("SELECT * FROM `articles`");
 
-		dump($articles);
+		$about = DB::select('select * from pages where id = ?', [1]);
+		$about_title = $about[0]->page_about_title;
+		$about_text = $about[0]->page_about_text;
 
-//		DB::insert("INSERT INTO `articles` (`name`, `text`) VALUES (?, ?)", ['test1', 'text1']);
-
-//		$result = DB::update("UPDATE `articles` SET `name` = 'TEST 2' WHERE `id` = ?", [9]);
-
-		DB::delete("DELETE FROM `articles` WHERE `id` = ?", [10]);
-
-		return view( 'default.about', [ 'title' => 'Hello world' ] );
+		return view( 'default.about', [ 'title' => 'Hello world', 'about_title' => $about_title, 'about_text' => $about_text ] );
 	}
 }

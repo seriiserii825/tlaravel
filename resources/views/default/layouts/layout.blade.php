@@ -27,8 +27,8 @@
                 <a class="navbar-brand" href="#">Laravel Project:</a>
             </div>
             <div id="navbar" class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li class="active">
+                <ul class="nav navbar-nav main-menu">
+                    <li>
                         <a href="<?php echo route( 'home' ); ?>">Home</a>
                     </li>
                     <li>
@@ -123,9 +123,26 @@
         <hr>
 
         <footer>
+
             <p>&copy; 2015 Company, Inc.</p>
         </footer>
     </div>
 </div>
+
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+            <script>
+                $(document).ready(function () {
+                    let siteHref = window.location.href;
+
+                    $('.main-menu li').each(function(){
+                        if(siteHref === $(this).find('a').attr('href')){
+                            $(this).addClass('active');
+                        } 
+                    });
+                    if(siteHref === 'http://tlaravel.local/'){
+                        $('.main-menu li').eq(0).addClass('active');
+                    }
+                });
+            </script>
 </body>
 </html>
