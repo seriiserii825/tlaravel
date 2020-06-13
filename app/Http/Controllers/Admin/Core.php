@@ -6,6 +6,8 @@ use App\Country;
 use App\User;
 use Illuminate\Http\Request;
 use DB;
+use App\Student;
+use App\Lesson;
 use App\Article;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
@@ -16,12 +18,17 @@ class Core extends Controller
 
 	}
 	public function getArticles() {
-//		$user = User::find(1);
-//		$country = $user->country;
 
-		$country = Country::find(1);
+		// $student = Student::find(1);
+		$lesson = Lesson::find(2);
+		dump($lesson->student);
+		
+		// $user = User::find(1);
+		// $country = Country::find(1);
 
-//		vardump($country);
+		// dump($country->user);
+		// dump($country);
+		// vardump($country);
 
 
 		// $articles = DB::table('articles')->get();
