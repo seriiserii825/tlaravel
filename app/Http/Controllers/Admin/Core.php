@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Country;
 use App\User;
+use App\Role;
 use Illuminate\Http\Request;
 use DB;
 use App\Student;
@@ -19,11 +20,40 @@ class Core extends Controller
 	}
 	public function getArticles() {
 
-		$users = User::all();
+		$user = User::find(6);
 
-		foreach ($users as $user) {
-			dump($user->roles);
-		}
+		// $user->articles()->create(
+		// 	[
+		// 	'name' => 'New article',
+		// 	'text' => 'Article text'
+		// 	]
+		// );
+
+		// $article = new Article([
+		// 	'name' => 'Article for user',
+		// 	'text' => 'Article for user text',
+		// ]);
+
+		// $user->articles()->save($article);
+
+		// $user->articles()->saveMany([
+		// 	new Article(['name' => 'article many', 'text' => 'article many text']),
+		// 	new Article(['name' => 'article many 2', 'text' => 'article many text 2']),
+		// ]);
+
+		// $articles = Article::all();
+		// dump($articles);
+
+		// $role = new Role(['name' => 'quest']);
+		// $user->roles()->save($role);
+
+		// $users = User::has('articles')->get();	
+		// dump($users);
+
+		// foreach ($users as $user) {
+		// 	// dump($user->roles);
+		// 	dump($user->articles);
+		// }
 
 		// $articles = Article::all();
 		// $articles = Article::with('user')->get();
@@ -74,5 +104,9 @@ class Core extends Controller
 //			echo $article->name.'<br>';
 //		}
 
+		$user->articles()->where('id', 20)->update(['name' => 'NEW TEXT']);
+
+		$article = Article::find(20);
+		dump($article->name);
 	}
 }
