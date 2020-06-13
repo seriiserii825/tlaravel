@@ -19,7 +19,20 @@ class Core extends Controller
 	}
 	public function getArticles() {
 
-		// $article = Article::find(11);
+		$users = User::all();
+
+		foreach ($users as $user) {
+			dump($user->roles);
+		}
+
+		// $articles = Article::all();
+		// $articles = Article::with('user')->get();
+
+		// $articles->load('user');
+
+		// foreach ($articles as $article) {
+		// 	echo $article->user->name.'<br>';
+		// }
 
 		// dump($article->user->email);
 
