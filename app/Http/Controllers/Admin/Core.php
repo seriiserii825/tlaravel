@@ -19,13 +19,27 @@ class Core extends Controller
 	}
 	public function getArticles() {
 
+		// $article = Article::find(11);
+
+		// dump($article->user->email);
+
 		// $student = Student::find(1);
-		$lesson = Lesson::find(2);
-		dump($lesson->student);
+		// $lesson = Lesson::find(2);
+		// dump($lesson->student);
 		
 		// $user = User::find(1);
-		// $country = Country::find(1);
 
+		// dump($user->roles);
+
+		// $article = $user->articles()->where('id', 10)->first();
+		// dump($article->name);
+
+		// $articles = $user->articles;
+		// foreach($articles as $article){
+		// 	echo $article->name.'<br>';
+		// }
+
+		// $country = Country::find(1);
 		// dump($country->user);
 		// dump($country);
 		// vardump($country);

@@ -28,4 +28,13 @@ class User extends Authenticatable
     public function country(){
     	return $this->hasOne('App\Country');
     }
+
+    
+    public function articles(){
+        return $this->hasMany('App\Article');
+    }
+
+    public function roles() {
+        return $this->belongsToMany('App\Role');
+    }
 }
