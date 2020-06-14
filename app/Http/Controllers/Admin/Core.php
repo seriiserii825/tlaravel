@@ -22,6 +22,17 @@ class Core extends Controller
 
 		$user = User::find(6);
 
+		$articles = Article::all();
+		foreach ($articles as $article) {
+			$article->user()->associate($user);
+			$article->save();
+		}
+
+		// $country = Country::find(1);
+
+		// $country->user()->associate($user);
+		// $country->save();
+
 		// $user->articles()->create(
 		// 	[
 		// 	'name' => 'New article',
@@ -104,9 +115,9 @@ class Core extends Controller
 //			echo $article->name.'<br>';
 //		}
 
-		$user->articles()->where('id', 20)->update(['name' => 'NEW TEXT']);
+		// $user->articles()->where('id', 20)->update(['name' => 'NEW TEXT']);
 
-		$article = Article::find(20);
-		dump($article->name);
+		// $article = Article::find(20);
+		// dump($article->name);
 	}
 }
