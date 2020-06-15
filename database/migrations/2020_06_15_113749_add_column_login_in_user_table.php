@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateTableRoles extends Migration
+class AddColumnLoginInUserTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,13 +12,9 @@ class CreateTableRoles extends Migration
      */
     public function up()
     {
-	    if ( !Schema::hasTable( 'roles' ) ) {
-		    Schema::create( 'roles', function ( Blueprint $table ) {
-			    $table->increments( 'id' );
-			    $table->string( 'name' );
-			    $table->timestamps();
-		    } );
-	    }
+	    Schema::table( 'users', function ( $table ) {
+		    $table->string( 'login', 255 )->after('name');
+	    } );
     }
 
     /**
@@ -28,6 +24,8 @@ class CreateTableRoles extends Migration
      */
     public function down()
     {
-        Schema::drop('roles');
+	    Schema::table( 'users', function ( $table ) {
+		    $table->dropColumn( 'login');
+	    } );
     }
 }
