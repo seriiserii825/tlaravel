@@ -22,5 +22,10 @@ Route::auth();
 //admin
 Route::group(['prefix' => 'admin', 'middleware' => ['web', 'auth']], function(){
 	Route::get('/', ['uses' => 'Admin\AdminController@show', 'as' => 'admin_index']);
-	Route::get( '/add/post', [ 'uses' => 'Admin\AdminPostController@create', 'as' => 'admin_add_post' ] );
+
+	Route::get( '/add/post', [ 'uses' => 'Admin\AdminPostController@show', 'as' => 'admin_add_post' ] );
+	Route::post( '/add/post', [ 'uses' => 'Admin\AdminPostController@create', 'as' => 'admin_add_post_p' ] );
+
+	Route::get( '/update/post{id}', [ 'uses' => 'Admin\AdminUpdatePostController@show', 'as' => 'admin_update_post' ] );
+	Route::post( '/update/post', [ 'uses' => 'Admin\AdminUpdatePostController@create', 'as' => 'admin_update_post_p' ] );
 });
